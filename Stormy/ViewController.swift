@@ -10,9 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var iconImageView: UIImageView?
+    @IBOutlet weak var summaryLabel: UILabel?
+    @IBOutlet weak var currentTemperatureLabel: UILabel?
+    @IBOutlet weak var minTemperatureLabel: UILabel?
+    @IBOutlet weak var maxTemperatureLabel: UILabel?
+    @IBOutlet weak var humidityLabel: UILabel?
+    @IBOutlet weak var precipitationLabel: UILabel?
+    @IBOutlet weak var windLabel: UILabel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        currentTemperatureLabel?.text = "80º"
     }
 
     override func didReceiveMemoryWarning() {
