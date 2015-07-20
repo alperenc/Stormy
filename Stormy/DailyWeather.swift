@@ -9,10 +9,13 @@
 import Foundation
 
 struct DailyWeather {
+    
+    let summary: String?
     let minTemperature: Int?
     let maxTemperature: Int?
     
     init(dailyWeatherDictionary: [String: AnyObject]) {
+        summary = dailyWeatherDictionary["summary"] as? String
         minTemperature = dailyWeatherDictionary["temperatureMin"] as? Int
         maxTemperature = dailyWeatherDictionary["temperatureMax"] as? Int
     }
