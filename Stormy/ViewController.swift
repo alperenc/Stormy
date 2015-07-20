@@ -21,8 +21,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        iconImageView?.image = UIImage(named: "clear-day")
+        summaryLabel?.text = "Clear"
         currentTemperatureLabel?.text = "80º"
+        
     }
 
     override func didReceiveMemoryWarning() {
