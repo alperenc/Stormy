@@ -13,6 +13,7 @@
 		C7AC6C261B5AE15700AD8BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AC6C241B5AE15700AD8BD1 /* LaunchScreen.storyboard */; };
 		C7AC6C2E1B5CF4AC00AD8BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AC6C2D1B5CF4AC00AD8BD1 /* Assets.xcassets */; };
 		C7AC6C301B5CF85400AD8BD1 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AC6C2F1B5CF85400AD8BD1 /* CurrentWeather.swift */; };
+		C7AC6C321B5CFFBC00AD8BD1 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AC6C311B5CFFBC00AD8BD1 /* DailyWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C7AC6C271B5AE15700AD8BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7AC6C2D1B5CF4AC00AD8BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7AC6C2F1B5CF85400AD8BD1 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		C7AC6C311B5CFFBC00AD8BD1 /* DailyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C7AC6C1B1B5AE15700AD8BD1 /* AppDelegate.swift */,
 				C7AC6C1D1B5AE15700AD8BD1 /* ViewController.swift */,
 				C7AC6C2F1B5CF85400AD8BD1 /* CurrentWeather.swift */,
+				C7AC6C311B5CFFBC00AD8BD1 /* DailyWeather.swift */,
 				C7AC6C1F1B5AE15700AD8BD1 /* Main.storyboard */,
 				C7AC6C241B5AE15700AD8BD1 /* LaunchScreen.storyboard */,
 				C7AC6C2D1B5CF4AC00AD8BD1 /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AC6C321B5CFFBC00AD8BD1 /* DailyWeather.swift in Sources */,
 				C7AC6C1E1B5AE15700AD8BD1 /* ViewController.swift in Sources */,
 				C7AC6C301B5CF85400AD8BD1 /* CurrentWeather.swift in Sources */,
 				C7AC6C1C1B5AE15700AD8BD1 /* AppDelegate.swift in Sources */,
