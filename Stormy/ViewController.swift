@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -24,44 +25,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(APIKey)/")
-        let locationURL = NSURL(string: "41.01,28.95?units=ca", relativeToURL: baseURL)
-        
-        let request = NSURLRequest(URL: locationURL!)
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: configuration)
-        
-        let dataTask = session.dataTaskWithRequest(request) {
-            (let data, let response, let error) in
-            
-            if let httpResponse = response as? NSHTTPURLResponse {
-                switch(httpResponse.statusCode) {
-                case 200:
-                    let jsonDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [String: AnyObject]
-                    print(jsonDictionary!["daily"]!["data"])
-                    let currentWeather = CurrentWeather(currentWeatherDictionary: jsonDictionary!["currently"] as! [String: AnyObject])
-//                    let dailyWeather = DailyWeather(dailyWeatherDictionary: jsonDictionary!["daily"]!["data"]![0] as! [String : AnyObject])
-                    dispatch_async(dispatch_get_main_queue()) {
-                        if let currentTemperature = currentWeather.temperature {
-                            self.currentTemperatureLabel?.text = "\(currentTemperature)º"
-                        }
-                        
-                    }
-                default:
-                    print("GET request not successful. HTTP status code: \(httpResponse.statusCode)")
+        let forecastAPIClient = ForecastAPIClient(APIKey: APIKey)
+        let istanbul = CLLocationCoordinate2DMake(28.94, 41.01)
+        forecastAPIClient.getForecast(istanbul) {
+            (let currentWeather, let dailyWeather) in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.summaryLabel?.text = currentWeather?.summary
+                if let temperature = currentWeather?.temperature {
+                    self.currentTemperatureLabel?.text = "\(temperature)º"
                 }
-            } else {
-                print("Error: Not a valid HTTP response")
+                
+                if let humidity = currentWeather?.humidity {
+                    self.humidityLabel?.text = "\(humidity)%"
+                }
+                
+                if let precipitation = currentWeather?.precipitation {
+                    self.precipitationLabel?.text = "\(precipitation)%"
+                }
+                
+                if let windSpeed = currentWeather?.windSpeed, let windDirection = currentWeather?.windDirection {
+                    self.windLabel?.text = "\(windSpeed) \(windDirection)"
+                }
+                
+                if let minTemperature = dailyWeather?.minTemperature {
+                    self.minTemperatureLabel?.text = "\(minTemperature)º"
+                }
+                
+                if let maxTemperature = dailyWeather?.maxTemperature {
+                    self.maxTemperatureLabel?.text = "\(maxTemperature)º"
+                }
             }
         }
         
-        dataTask.resume()
-        
-        
         iconImageView?.image = UIImage(named: "clear-day")
-        summaryLabel?.text = "Clear"
-        currentTemperatureLabel?.text = "80º"
         
     }
 
