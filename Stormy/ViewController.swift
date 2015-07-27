@@ -30,7 +30,13 @@ class ViewController: UIViewController {
         forecastAPIClient.getForecast(istanbul) {
             (let currentWeather, let dailyWeather) in
             dispatch_async(dispatch_get_main_queue()) {
+                
                 self.summaryLabel?.text = currentWeather?.summary
+                
+                if let iconName = currentWeather?.iconName {
+                    self.iconImageView?.image = UIImage(named: iconName)
+                }
+                
                 if let temperature = currentWeather?.temperature {
                     self.currentTemperatureLabel?.text = "\(temperature)º"
                 }
@@ -56,8 +62,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-        iconImageView?.image = UIImage(named: "clear-day")
         
     }
 

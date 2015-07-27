@@ -13,6 +13,7 @@ struct CurrentWeather {
     let summary: String?
     let temperature: Int?
     let humidity: Int?
+    let iconName: String?
     let precipitation: Int?
     let windSpeed: Double?
     let windDirection: Int?
@@ -28,6 +29,8 @@ struct CurrentWeather {
         } else {
             humidity = nil
         }
+        
+        iconName = currentWeatherDictionary["icon"] as? String
         
         if let currentPrecipitation = currentWeatherDictionary["precipProbability"] as? Double {
             precipitation = Int(currentPrecipitation * 100)
