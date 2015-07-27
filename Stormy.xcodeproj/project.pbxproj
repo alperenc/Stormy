@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C79D03471B656DBD000AFEAE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D03461B656DBD000AFEAE /* Networking.swift */; };
 		C7AC6C1C1B5AE15700AD8BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AC6C1B1B5AE15700AD8BD1 /* AppDelegate.swift */; };
 		C7AC6C1E1B5AE15700AD8BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AC6C1D1B5AE15700AD8BD1 /* ViewController.swift */; };
 		C7AC6C211B5AE15700AD8BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AC6C1F1B5AE15700AD8BD1 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C79D03461B656DBD000AFEAE /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		C7AC6C181B5AE15700AD8BD1 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AC6C1B1B5AE15700AD8BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7AC6C1D1B5AE15700AD8BD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				C7AC6C1B1B5AE15700AD8BD1 /* AppDelegate.swift */,
 				C7AC6C1D1B5AE15700AD8BD1 /* ViewController.swift */,
+				C79D03461B656DBD000AFEAE /* Networking.swift */,
 				C7AC6C2F1B5CF85400AD8BD1 /* CurrentWeather.swift */,
 				C7AC6C311B5CFFBC00AD8BD1 /* DailyWeather.swift */,
 				C7AC6C1F1B5AE15700AD8BD1 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7AC6C321B5CFFBC00AD8BD1 /* DailyWeather.swift in Sources */,
+				C79D03471B656DBD000AFEAE /* Networking.swift in Sources */,
 				C7AC6C1E1B5AE15700AD8BD1 /* ViewController.swift in Sources */,
 				C7AC6C301B5CF85400AD8BD1 /* CurrentWeather.swift in Sources */,
 				C7AC6C1C1B5AE15700AD8BD1 /* AppDelegate.swift in Sources */,
